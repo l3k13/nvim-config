@@ -31,6 +31,10 @@ return require('packer').startup(function(use)
         config = function() require("nvim-autopairs").setup {} end
     }
     use 'folke/tokyonight.nvim'
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
     
     if packer_bootstrap then
         require('packer').sync()
