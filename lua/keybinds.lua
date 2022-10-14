@@ -11,6 +11,7 @@ map('i', '<C-A>', '<ESC>I')
 map('n', '<C-T>', '<CMD>NvimTreeToggle<CR>')
 map('n', '<C-B>', '<CMD>bn<CR>')
 map('n', 'K', vim.lsp.buf.hover)
+map('t', '<ESC>', '<C-\\><C-n>') -- Map ESC to escape out of terminal mode
 mapex('i', '<Tab>', 'v:lua.tab_complete()')
 mapex('s', '<Tab>', 'v:lua.tab_complete()')
 mapex('i', '<S-Tab>', 'v:lua.s_tab_complete()')
