@@ -1,3 +1,4 @@
+vim.cmd [[packadd packer.nvim]]
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
