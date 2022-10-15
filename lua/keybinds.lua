@@ -3,7 +3,7 @@ local function map(mode, key, val)
 end
 
 local function mapex(mode, key, val)
-    vim.keymap.set(mode, key, val, {expr = true})
+    vim.keymap.set(mode, key, val, { expr = true })
 end
 
 map('i', '<C-E>', '<ESC>A')

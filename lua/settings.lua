@@ -8,7 +8,11 @@ o.numberwidth = 4
 o.scrolloff = 8
 o.wrap = true
 o.termguicolors = false
-vim.cmd[[colorscheme tokyonight-night]]
+vim.cmd [[colorscheme tokyonight-night]]
+g.tokyonight_style = "night"
+g.tokyonight_italic_functions = true
+g.tokyonight_transparent = true
+g.tokyonight_transparent_sidebar = true
 
 -- Indentation
 o.autoindent = false
