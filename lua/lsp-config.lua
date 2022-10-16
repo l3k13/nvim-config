@@ -57,6 +57,8 @@ require('lspconfig')['tsserver'].setup {
         on_attach(client, bufnr)
         enable_format_on_save(client, bufnr)
     end,
+    filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx' },
+    cmd = { 'typescript-language-server', '--stdio' },
     flags = lsp_flags,
 }
 
