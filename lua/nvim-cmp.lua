@@ -175,7 +175,9 @@ local lsp_flags = {
 require('lspconfig')['pyright'].setup {
     on_attach = function(client, bufnr)
         on_attach(client, bufnr)
-        enable_format_on_save(client, bufnr)
+        if capabilities.formatting then
+            enable_format_on_save(client, bufnr)
+        end
     end,
     flags = lsp_flags,
     capabilities = capabilities,
@@ -184,7 +186,9 @@ require('lspconfig')['pyright'].setup {
 require('lspconfig')['tsserver'].setup {
     on_attach = function(client, bufnr)
         on_attach(client, bufnr)
-        enable_format_on_save(client, bufnr)
+        if capabilities.formatting then
+            enable_format_on_save(client, bufnr)
+        end
     end,
     filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx' },
     cmd = { 'typescript-language-server', '--stdio' },
@@ -195,7 +199,9 @@ require('lspconfig')['tsserver'].setup {
 require('lspconfig')['rust_analyzer'].setup {
     on_attach = function(client, bufnr)
         on_attach(client, bufnr)
-        enable_format_on_save(client, bufnr)
+        if capabilities.formatting then
+            enable_format_on_save(client, bufnr)
+        end
     end,
     flags = lsp_flags,
     capabilities = capabilities,
@@ -206,11 +212,13 @@ require('lspconfig')['rust_analyzer'].setup {
 }
 
 require 'lspconfig'.sumneko_lua.setup {
+    capabilities = capabilities,
     on_attach = function(client, bufnr)
         on_attach(client, bufnr)
-        enable_format_on_save(client, bufnr)
+        if capabilities.formatting then
+            enable_format_on_save(client, bufnr)
+        end
     end,
-    capabilities = capabilities,
     settings = {
         Lua = {
             runtime = {
