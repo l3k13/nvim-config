@@ -5,11 +5,12 @@ require('settings')
 require('plugins')
 require('keybinds')
 require('autocomplete')
+require('theme')
 
 require('nvim-tree').setup()
 require('lualine').setup {
     options = {
-        theme = 'tokyonight'
+        theme = 'onedark'
     }
 }
 

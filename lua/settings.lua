@@ -8,9 +8,10 @@ o.numberwidth = 4
 o.scrolloff = 8
 o.wrap = true
 o.termguicolors = false
-vim.cmd [[colorscheme tokyonight-night]]
-g.tokyonight_style = "night"
-g.tokyonight_italic_functions = true
+--vim.cmd [[colorscheme tokyonight-night]]
+--g.tokyonight_style = "night"
+--g.tokyonight_italic_functions = true
+vim.opt.guifont = { "JetBrainsMono Nerd Font", "h14" }
 
 -- Indentation
 o.autoindent = false

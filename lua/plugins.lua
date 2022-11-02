@@ -33,7 +33,8 @@ return require('packer').startup(function(use)
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
-    use 'folke/tokyonight.nvim'
+    --use 'folke/tokyonight.nvim'
+    use 'navarasu/onedark.nvim'
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
