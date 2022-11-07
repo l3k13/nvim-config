@@ -12,6 +12,7 @@ o.termguicolors = false
 --g.tokyonight_style = "night"
 --g.tokyonight_italic_functions = true
 vim.opt.guifont = { "JetBrainsMono Nerd Font", "h14" }
+vim.opt.mouse = "a"
 
 -- Indentation
 o.autoindent = false
