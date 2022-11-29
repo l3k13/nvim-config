@@ -21,10 +21,10 @@ tabnine.setup({
 })
 
 local source_mapping = {
-    buffer = "[Buffer]",
-    nvim_lsp = "[LSP]",
-    nvim_lua = "[Lua]",
     cmp_tabnine = "[TN]",
+    nvim_lsp = "[LSP]",
+    buffer = "[Buffer]",
+    nvim_lua = "[Lua]",
     path = "[Path]",
 }
 
@@ -173,6 +173,26 @@ local lsp_flags = {
 }
 
 require('lspconfig')['pyright'].setup {
+    on_attach = function(client, bufnr)
+        on_attach(client, bufnr)
+        if capabilities.formatting then
+            enable_format_on_save(client, bufnr)
+        end
+    end,
+    flags = lsp_flags,
+    capabilities = capabilities,
+}
+
+require('lspconfig')['ccls'].setup {
+    init_options = {
+        compilationDatabaseDirectory = "build",
+        index = {
+            threads = 0
+        },
+        clang = {
+            excludeArgs = { "-frounding-math"}
+        },
+    },
     on_attach = function(client, bufnr)
         on_attach(client, bufnr)
         if capabilities.formatting then
